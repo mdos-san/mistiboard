@@ -1,0 +1,44 @@
+<mat-card *ngIf="cat !== null" class="infos">
+  <mat-form-field>
+    <mat-label>Nom</mat-label>
+    <input matInput type="text" [(ngModel)]="cat.name" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Date de naissance</mat-label>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      [ngModel]="cat.birthday"
+      (ngModelChange)="convertAndAssignBirthday($event)"
+    />
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>ICAD</mat-label>
+    <input matInput type="text" [(ngModel)]="cat.icad" />
+  </mat-form-field>
+
+  <cat-medical-file [cat]="cat"></cat-medical-file>
+
+  <mat-form-field>
+    <mat-label>Caractère</mat-label>
+    <textarea matInput type="text" [(ngModel)]="cat.character"></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Origine</mat-label>
+    <textarea matInput type="text" [(ngModel)]="cat.origin"></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Critères pour l'adoption</mat-label>
+    <textarea matInput [(ngModel)]="cat.criterias"></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Notes</mat-label>
+    <textarea matInput [(ngModel)]="cat.notes"></textarea>
+  </mat-form-field>
+</mat-card>
+
+<action-sidebar [actionList]="actionList"></action-sidebar>
