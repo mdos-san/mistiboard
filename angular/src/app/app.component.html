@@ -1,0 +1,20 @@
+<header>
+  <mat-toolbar color="primary">
+    <span>Mistiboard</span>
+    <nav *ngIf="authentification.getIsAuth()">
+      <a [routerLink]="['/cats']" mat-button> Chats </a>
+      <a [routerLink]="['/families']" mat-button> Familles </a>
+      <a [routerLink]="['/admin']" mat-button> Administration </a>
+    </nav>
+    <button
+      mat-button
+      *ngIf="authentification.getIsAuth()"
+      (click)="authentification.signOut()"
+    >
+      Déconnexion
+    </button>
+  </mat-toolbar>
+</header>
+<main>
+  <pages></pages>
+</main>

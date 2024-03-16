@@ -1,0 +1,7 @@
+<mat-card class="actions">
+  <ng-template ngFor let-action [ngForOf]="actionList">
+    <button mat-raised-button color="primary" (click)="action.handler()">
+      {{ action.label }}
+    </button>
+  </ng-template>
+</mat-card>

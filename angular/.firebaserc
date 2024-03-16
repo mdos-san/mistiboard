@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mistiboard-dev": {
+      "hosting": {
+        "mistiboard": [
+          "mistiboard-dev"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mistiboard-dev"
+  }
+}

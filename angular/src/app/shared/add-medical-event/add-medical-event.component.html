@@ -1,0 +1,11 @@
+<form class="cat-creation-form" [formGroup]="form" (submit)="submitForm()">
+  <h3>Ajouter un evenement medical</h3>
+  <mat-checkbox formControlName="fiv"></mat-checkbox>
+  <mat-checkbox formControlName="felv"></mat-checkbox>
+  <mat-checkbox formControlName="sterilised"></mat-checkbox>
+  <mat-form-field class="example-full-width">
+    <mat-label>Note</mat-label>
+    <input matInput type="text" placeholder="Note..." formControlName="note" />
+  </mat-form-field>
+  <button type="submit" mat-button color="primary">Ajouter</button>
+</form>
