@@ -1,0 +1,12 @@
+Script pour build le package `core`
+Installation du package `core` dans le front `angular`
+Créer le module ui
+Créer le module layout
+UI de l'historique medical
+Assignation d'un chat a une famille
+Mise en place des tests unitaires
+Mise en place des tests e2e
+Test auto sur une pipeline
+Upload de photo sur le profil d'un chat
+Hauteur des text area dans le detail d'un chat
+
