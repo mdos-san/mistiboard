@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+
+.cat-creation-form {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+}

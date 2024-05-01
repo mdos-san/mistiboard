@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Dossier médical</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>FIV: {{ medicalFile.fiv }}</p>
+    <p>FELV: {{ medicalFile.felv }}</p>
+    <p>Sterilisation: {{ medicalFile.sterilised }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="handleNewMedicalEvent()">
+      Mettre a jour le dossier medical
+    </button>
+  </mat-card-actions>
+</mat-card>
+
+<ng-template ngFor let-medicalFileModification [ngForOf]="cat.medicalEvents">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ medicalFileModification.date }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ medicalFileModification | json }}</p>
+    </mat-card-content>
+  </mat-card>
+</ng-template>
