@@ -1,0 +1,91 @@
+<detail-page>
+  <mat-toolbar header class="header" color="primary">
+    <span>MistiBoard</span>
+    <nav *ngIf="core.core.authentification.getIsAuth()">
+      <a [routerLink]="['/cats']" mat-button> Chats </a>
+      <a [routerLink]="['/families']" mat-button> Familles </a>
+    </nav>
+    <button
+      mat-button
+      *ngIf="core.core.authentification.getIsAuth()"
+      (click)="core.core.authentification.signOut()"
+    >
+      Déconnexion
+    </button>
+  </mat-toolbar>
+
+  <mat-card summary *ngIf="cat !== null" class="infos">
+    <img mat-card-image [src]="catPictureUrl" />
+
+    <mat-card-content>
+      <file-input [cat]="cat" [uploadUrl]="fileUploadUrl"></file-input>
+
+      <mat-form-field>
+        <mat-label>Nom</mat-label>
+        <input matInput type="text" [(ngModel)]="cat.name" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Date de naissance</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          [ngModel]="cat.birthday"
+          (ngModelChange)="convertAndAssignBirthday($event)"
+        />
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Race</mat-label>
+        <input matInput type="text" [(ngModel)]="cat.breed" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Robe</mat-label>
+        <input matInput type="text" [(ngModel)]="cat.coat" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>ICAD</mat-label>
+        <input matInput type="text" [(ngModel)]="cat.icad" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Famille</mat-label>
+        <mat-select [(ngModel)]="cat.familyId">
+          @for (family of families; track family) {
+            <mat-option [value]="family.id">{{ family.name }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Caractère</mat-label>
+        <textarea matInput type="text" [(ngModel)]="cat.character"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Origine</mat-label>
+        <textarea matInput type="text" [(ngModel)]="cat.origin"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Critères pour l'adoption</mat-label>
+        <textarea matInput [(ngModel)]="cat.criterias"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Notes</mat-label>
+        <textarea matInput [(ngModel)]="cat.notes"></textarea>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
+  <div detail *ngIf="cat !== null">
+    <cat-medical-file [cat]="cat"></cat-medical-file>
+  </div>
+
+  <cat-save-button actions [cat]="cat"></cat-save-button>
+</detail-page>

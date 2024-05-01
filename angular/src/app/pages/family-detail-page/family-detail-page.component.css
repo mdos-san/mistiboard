@@ -1,0 +1,14 @@
+img {
+  max-height: 200px !important;
+  object-fit: cover !important;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+div[detail] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}

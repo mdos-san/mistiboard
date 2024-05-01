@@ -1,0 +1,24 @@
+<mat-card class="signin-card">
+  <h2>Connexion au MistiBoard</h2>
+  <form class="signin-form" [formGroup]="signInForm" (submit)="signIn()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Email"
+        formControlName="username"
+      />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Mot de passe</mat-label>
+      <input
+        matInput
+        type="password"
+        placeholder="Mot de passe"
+        formControlName="password"
+      />
+    </mat-form-field>
+    <button type="submit" mat-button color="primary">Se connecter</button>
+  </form>
+</mat-card>

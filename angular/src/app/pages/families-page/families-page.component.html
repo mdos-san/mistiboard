@@ -1,0 +1,18 @@
+<page-with-header-content-action>
+  <mat-toolbar header class="header" color="primary">
+    <span>MistiBoard</span>
+    <nav *ngIf="core.core.authentification.getIsAuth()">
+      <a [routerLink]="['/cats']" mat-button> Chats </a>
+      <a [routerLink]="['/families']" mat-button> Familles </a>
+    </nav>
+    <button
+      mat-button
+      *ngIf="core.core.authentification.getIsAuth()"
+      (click)="core.core.authentification.signOut()"
+    >
+      Déconnexion
+    </button>
+  </mat-toolbar>
+  <family-list content></family-list>
+  <family-add-button actions></family-add-button>
+</page-with-header-content-action>

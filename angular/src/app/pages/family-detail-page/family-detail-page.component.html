@@ -1,0 +1,89 @@
+<detail-page>
+  <mat-toolbar header class="header" color="primary">
+    <span>MistiBoard</span>
+    <nav *ngIf="core.core.authentification.getIsAuth()">
+      <a [routerLink]="['/cats']" mat-button> Chats </a>
+      <a [routerLink]="['/families']" mat-button> Familles </a>
+    </nav>
+    <button
+      mat-button
+      *ngIf="core.core.authentification.getIsAuth()"
+      (click)="core.core.authentification.signOut()"
+    >
+      Déconnexion
+    </button>
+  </mat-toolbar>
+
+  <mat-card summary *ngIf="family !== null" class="infos">
+    <mat-form-field>
+      <mat-label>Nom</mat-label>
+      <input matInput type="text" [(ngModel)]="family.name" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Prénom</mat-label>
+      <input matInput type="text" [(ngModel)]="family.firstname" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Adresse</mat-label>
+      <input matInput type="text" [(ngModel)]="family.address" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Code Postal</mat-label>
+      <input matInput type="text" [(ngModel)]="family.postalCode" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Ville</mat-label>
+      <input matInput type="text" [(ngModel)]="family.city" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Téléphone</mat-label>
+      <input matInput type="text" [(ngModel)]="family.phone" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="text" [(ngModel)]="family.email" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Personnes au foyer</mat-label>
+      <input matInput type="number" [(ngModel)]="family.peopleInHouse" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Enfants au foyer</mat-label>
+      <input matInput type="number" [(ngModel)]="family.childInHouse" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Chats au foyer</mat-label>
+      <input matInput type="number" [(ngModel)]="family.catInHouse" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Chiens au foyer</mat-label>
+      <input matInput type="number" [(ngModel)]="family.dogInHouse" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Oiseaux au foyer</mat-label>
+      <input matInput type="number" [(ngModel)]="family.birdInHouse" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Capacite</mat-label>
+      <input matInput type="number" [(ngModel)]="family.capacity" />
+    </mat-form-field>
+  </mat-card>
+
+  <div detail>
+    <cat-preview-card *ngFor="let cat of cats" [cat]="cat"></cat-preview-card>
+  </div>
+
+  <family-save-button actions [family]="family"></family-save-button>
+</detail-page>
