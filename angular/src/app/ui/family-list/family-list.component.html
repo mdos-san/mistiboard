@@ -1,0 +1,5 @@
+<family-card
+  *ngFor="let family of families"
+  [family]="family"
+  (click)="goToDetail(family.id)"
+></family-card>
