@@ -1,0 +1,12 @@
+<form
+  class="cat-creation-form"
+  [formGroup]="catCreationForm"
+  (submit)="submitCreationForm()"
+>
+  <h3>Ajouter un chat</h3>
+  <mat-form-field class="example-full-width">
+    <mat-label>Nom</mat-label>
+    <input matInput type="text" placeholder="Nom" formControlName="name" />
+  </mat-form-field>
+  <button type="submit" mat-button color="primary">Créer</button>
+</form>
