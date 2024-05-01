@@ -1,0 +1,16 @@
+:host {
+  display: inline-block;
+  width: 300px;
+}
+
+.preview-image {
+  min-width: 300px;
+  max-width: 300px;
+  min-height: 200px;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.mat-mdc-card-header {
+  padding: 0px 16px;
+}
