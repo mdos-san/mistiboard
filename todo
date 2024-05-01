@@ -1,0 +1,14 @@
+Modale RDV Véto
+UI de l'historique medical
+Snackbar retour des actions
+Mise en place des tests unitaires
+Mise en place des tests e2e
+Test auto sur une pipeline
+
+Bugs:
+
+Optimisation:
+
+ - Chargement des images
+ - Stockage dans le localstorage des données
+
