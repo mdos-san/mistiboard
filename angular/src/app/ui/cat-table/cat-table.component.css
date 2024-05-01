@@ -1,0 +1,30 @@
+:host {
+  --card-per-row: 4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  height: 100%;
+  width: calc(300px * var(--card-per-row) + 32px * (var(--card-per-row) - 1));
+}
+
+.cat-table {
+  width: 100%;
+}
+
+@media (max-width: 1376px) {
+  :host {
+    --card-per-row: 3;
+  }
+}
+
+@media (max-width: 1026px) {
+  :host {
+    --card-per-row: 2;
+  }
+}
+
+@media (max-width: 698px) {
+  :host {
+    --card-per-row: 1;
+  }
+}
