@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  --padding-x: max(calc((100vw - 1296px) / 2), 32px);
+}
+
+header {
+  height: min-content;
+  padding-left: var(--padding-x);
+  padding-right: var(--padding-x);
+  /* Should not have to do this */
+  background-color: #3f51b5;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 32px var(--padding-x);
+  height: 100%;
+  overflow: auto;
+}
+
+footer {
+  height: 86px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--padding-x);
+}
