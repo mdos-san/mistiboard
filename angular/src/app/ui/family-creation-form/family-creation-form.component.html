@@ -1,0 +1,12 @@
+<form
+  class="cat-creation-form"
+  [formGroup]="familyCreationForm"
+  (submit)="submitCreationForm()"
+>
+  <h3>Ajouter une famille</h3>
+  <mat-form-field class="example-full-width">
+    <mat-label>Nom</mat-label>
+    <input matInput type="text" placeholder="Nom" formControlName="name" />
+  </mat-form-field>
+  <button type="submit" mat-button color="primary">Créer</button>
+</form>
