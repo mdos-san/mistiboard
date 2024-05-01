@@ -1,0 +1,54 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  --padding-x: max(calc((100vw - 1296px) / 2), 32px);
+}
+
+header {
+  height: min-content;
+  padding-left: var(--padding-x);
+  padding-right: var(--padding-x);
+  /* Should not have to do this */
+  background-color: #3f51b5;
+}
+
+main {
+  padding: 32px var(--padding-x);
+  padding-bottom: 0;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  gap: 32px;
+}
+
+.summary {
+  width: calc(1296px / 3);
+}
+
+.detail {
+  width: 100%;
+}
+
+footer {
+  height: 86px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--padding-x);
+}
+
+@media (max-width: 720px) {
+  main {
+    flex-direction: column;
+  }
+
+  .summary {
+    width: 100%;
+  }
+
+  .detail {
+    width: 100%;
+  }
+}
